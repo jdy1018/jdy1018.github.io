@@ -1,0 +1,176 @@
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>BITE BEST</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #111;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding: 1rem 2rem;
+      background-color: #0f0f0f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #fff;
+    }
+    .logo span {
+      color: #ff0000;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+      margin: 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+  color: #ff0000 !important;
+    } 
+    h1 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 0 2rem 2rem;
+    }
+    .showcase-item {
+      position: relative;
+      overflow: hidden;
+      height: 250px;
+      border-radius: 8px;
+      display: block;
+    }
+    .showcase-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .showcase-item:hover img {
+      transform: scale(1.1);
+    }
+    .showcase-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .showcase-item:hover .showcase-overlay {
+      transform: translateY(0);
+    }
+    .showcase-overlay h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 0 0.3rem 0;
+    }
+    .showcase-overlay p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .showcase-item {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">BI<span>TE</span></div>
+    <nav>
+      <ul>
+        <li><a href="best.html">BEST</a></li>
+<li><a href="outer.html">OUTER</a></li>
+<li><a href="top.html">TOP</a></li>
+<li><a href="bottom.html">BOTTOM</a></li>
+<li><a href="shoes.html">SHOES</a></li>
+<li><a href="acc.html">ACC</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>BEST</h1>
+
+  <div class="showcase-grid">
+    <a class="showcase-item">
+      <img src="OUTER PHOTO/Big Rock Leather Jacket.webp" alt="Big Rock Leather Jacket">
+      <div class="showcase-overlay">
+        <h3>Big Rock Leather Jacket</h3>
+        <p>$1,130.00 USD</p>
+      </div>
+    </a>
+    <a class="showcase-item">
+      <img src="ACC PHOTO/TC Belt.webp" alt="TC Belt">
+      <div class="showcase-overlay">
+        <h3>TC Belt</h3>
+        <p>$1,944.56 USD</p>
+      </div>
+    </a>
+    <a class="showcase-item">
+      <img src="TOP PHOTO/Sprayed Camoflage Rock Hoodie.webp" alt="Sprayed Camoflage Rock Hoodie">
+      <div class="showcase-overlay">
+        <h3>Sprayed Camoflage Rock Hoodie</h3>
+        <p>$400.00 USD</p>
+      </div>
+    </a>
+    <a class="showcase-item">
+      <img src="ACC PHOTO/TECHNO-1.webp" alt="TECHNO-1">
+      <div class="showcase-overlay">
+        <h3>TECHNO-1</h3>
+        <p>$357.73 USD</p>
+      </div>
+    </a>
+    <a class="showcase-item">
+      <img src="SHOES PHOTO/Reploca 2002 x TC.webp" alt="Reploca 2002 x TC">
+      <div class="showcase-overlay">
+        <h3>Reploca 2002 x TC</h3>
+        <p>$199.00 USD</p>
+      </div>
+    </a>
+    <a class="showcase-item">
+      <img src="BOTTOM PHOTO/TC Jogger pants.webp" alt="TC Jogger pants">
+      <div class="showcase-overlay">
+        <h3>TC Jogger pants</h3>
+        <p>$158.00 USD</p>
+      </div>
+    </a>
+  </div>
+    <p style="text-align: center; margin-top: 2rem;">
+    <a href="../index.html" style="color:#ff0000;">← 홈으로 돌아가기</a>
+    </p>
+</body>
+</html>
