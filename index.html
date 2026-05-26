@@ -30,7 +30,7 @@
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1400px;      
             margin: 0 auto;
             padding: 0 2rem;
         }
@@ -451,6 +451,61 @@
             height: 100%;
             z-index: 0;
         }
+        .lookbook-section { padding: 6rem 0; background-color: var(--primary-color); }
+.lookbook-tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.lb-tab { padding: 0.9rem 2.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-secondary); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; transition: all 0.3s ease; margin-bottom: -1px; }
+.lb-tab.active, .lb-tab:hover { color: var(--text-color); border-bottom-color: var(--accent-color); }
+.lb-panel { display: none; }
+.lb-panel.active { display: block; }
+
+.lookbook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+.lb-photo-item { position: relative; overflow: hidden; cursor: pointer; background: var(--secondary-color); }
+.lb-photo-item.tall { grid-row: span 2; }
+.lb-photo-item.wide { grid-column: span 2; }
+.lb-photo-item img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; transition: transform 0.6s ease, filter 0.4s ease; filter: grayscale(20%); }
+.lb-photo-item:hover img { transform: scale(1.06); filter: grayscale(0%); }
+.lb-photo-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1.2rem; }
+.lb-photo-item:hover .lb-photo-overlay { opacity: 1; }
+.lb-photo-overlay span { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-secondary); }
+.lb-zoom-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.7); width: 50px; height: 50px; border: 2px solid rgba(255,255,255,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; opacity: 0; transition: opacity 0.3s, transform 0.3s; }
+.lb-photo-item:hover .lb-zoom-icon { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+.lookbook-video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+.lb-video-item { position: relative; background: var(--secondary-color); overflow: hidden; cursor: pointer; }
+.lb-video-thumb { position: relative; padding-top: 56.25%; overflow: hidden; }
+.lb-video-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s, filter 0.4s; filter: grayscale(30%); }
+.lb-video-item:hover .lb-video-thumb img { transform: scale(1.05); filter: grayscale(0%); }
+.lb-play-btn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35); transition: background 0.3s; }
+.lb-video-item:hover .lb-play-btn { background: rgba(220,20,60,0.3); }
+.lb-play-circle { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; transition: background 0.3s, transform 0.3s; }
+.lb-video-item:hover .lb-play-circle { background: var(--accent-color); border-color: var(--accent-color); transform: scale(1.1); }
+.lb-video-info { padding: 1rem 1.2rem; }
+.lb-video-info h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem; letter-spacing: 1px; }
+.lb-video-info p { font-size: 0.75rem; color: var(--text-secondary); letter-spacing: 1px; }
+
+.lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; align-items: center; justify-content: center; }
+.lightbox.open { display: flex; }
+.lightbox-inner { position: relative; max-width: 90vw; max-height: 90vh; }
+.lightbox-inner img { max-width: 90vw; max-height: 82vh; object-fit: contain; display: block; }
+.lightbox-iframe-wrap { width: min(80vw, 1000px); aspect-ratio: 16/9; }
+.lightbox-iframe-wrap iframe { width: 100%; height: 100%; border: none; }
+.lightbox-close { position: absolute; top: -2.5rem; right: 0; background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.7; transition: opacity 0.2s, color 0.2s; }
+.lightbox-close:hover { opacity: 1; color: var(--accent-color); }
+.lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; font-size: 1.4rem; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s; }
+.lightbox-nav:hover { background: var(--accent-color); }
+.lightbox-prev { left: -3.5rem; }
+.lightbox-next { right: -3.5rem; }
+.lightbox-caption { text-align: center; margin-top: 0.8rem; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-secondary); }
+
+@media (max-width: 768px) {
+    .lookbook-grid { grid-template-columns: 1fr 1fr; }
+    .lb-photo-item.wide { grid-column: span 1; }
+    .lookbook-video-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    .lookbook-grid { grid-template-columns: 1fr; }
+    .lb-photo-item.tall { grid-row: span 1; }
+}
     </style>
 </head>
 <body>
@@ -463,6 +518,7 @@
                     <li><a href="#services">SERVICE</a></li>
                     <li><a href="#about">REPORT</a></li>
                     <li><a href="#showcase">MADE</a></li>
+                    <li><a href="#lookbook">LOOKBOOK</a></li>
                     <li><a href="#contact">INQUIRY</a></li>
                 </ul>
             </nav>
@@ -591,7 +647,65 @@
         </div>
     </div>
     </section>
+<section id="lookbook" class="lookbook-section">
+    <div class="container">
+        <h2 class="section-title">LOOK<span>BOOK</span></h2>
+        <div class="lookbook-tabs">
+            <button class="lb-tab active" data-panel="photos">📷 사진</button>
+            <button class="lb-tab" data-panel="videos">🎬 영상</button>
+        </div>
 
+        <!-- 사진 탭 -->
+        <div class="lb-panel active" id="lb-photos">
+            <div class="lookbook-grid">
+                <!-- ↓ 여기서 src/data-src를 실제 사진 경로로 교체하세요 -->
+                <div class="lb-photo-item tall" data-src="사진경로1" data-caption="SS25 Collection">
+                    <img src="사진경로1" alt="Lookbook 01">
+                    <div class="lb-photo-overlay"><span>Collection 01</span></div>
+                    <div class="lb-zoom-icon">+</div>
+                </div>
+                <div class="lb-photo-item" data-src="사진경로2" data-caption="Collection 02">
+                    <img src="사진경로2" alt="Lookbook 02">
+                    <div class="lb-photo-overlay"><span>Collection 02</span></div>
+                    <div class="lb-zoom-icon">+</div>
+                </div>
+                <div class="lb-photo-item" data-src="사진경로3" data-caption="Collection 03">
+                    <img src="사진경로3" alt="Lookbook 03">
+                    <div class="lb-photo-overlay"><span>Collection 03</span></div>
+                    <div class="lb-zoom-icon">+</div>
+                </div>
+                <!-- 사진 추가하려면 위 블록을 복사해서 계속 붙여넣으세요 -->
+            </div>
+        </div>
+
+        <!-- 영상 탭 -->
+        <div class="lb-panel" id="lb-videos">
+            <div class="lookbook-video-grid">
+                <!-- ↓ data-video-id에 유튜브 영상 ID 입력 (URL에서 v= 뒤 부분) -->
+                <div class="lb-video-item" data-video-id="여기에유튜브ID">
+                    <div class="lb-video-thumb">
+                        <img src="https://img.youtube.com/vi/여기에유튜브ID/maxresdefault.jpg" alt="Video 01">
+                        <div class="lb-play-btn"><div class="lb-play-circle">▶</div></div>
+                    </div>
+                    <div class="lb-video-info">
+                        <h4>영상 제목</h4>
+                        <p>영상 설명</p>
+                    </div>
+                </div>
+                <!-- 영상 추가하려면 위 블록을 복사해서 계속 붙여넣으세요 -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 라이트박스 (닫기/이전/다음 팝업창) -->
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-inner" id="lightboxInner">
+        <button class="lightbox-close" id="lbClose">✕</button>
+        <button class="lightbox-nav lightbox-prev" id="lbPrev">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lbNext">›</button>
+    </div>
+</div>
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="section-title">우리와 <span>함께</span>하세요</h2>
@@ -725,6 +839,79 @@
                 });
             });
         });
+        // 탭 전환
+document.querySelectorAll('.lb-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.lb-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.lb-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('lb-' + tab.dataset.panel).classList.add('active');
+    });
+});
+
+// 사진 라이트박스
+const lightbox = document.getElementById('lightbox');
+const lbInner  = document.getElementById('lightboxInner');
+const lbClose  = document.getElementById('lbClose');
+const lbPrev   = document.getElementById('lbPrev');
+const lbNext   = document.getElementById('lbNext');
+let photoItems = [], currentIdx = 0;
+
+function openPhoto(idx) {
+    photoItems = Array.from(document.querySelectorAll('.lb-photo-item[data-src]'));
+    currentIdx = idx;
+    lbInner.querySelectorAll('img, .lightbox-caption, .lightbox-iframe-wrap').forEach(el => el.remove());
+    const img = document.createElement('img');
+    img.src = photoItems[idx].dataset.src;
+    lbInner.appendChild(img);
+    const caption = photoItems[idx].dataset.caption;
+    if (caption) {
+        const cap = document.createElement('div');
+        cap.className = 'lightbox-caption';
+        cap.textContent = caption;
+        lbInner.appendChild(cap);
+    }
+    lbPrev.style.display = lbNext.style.display = photoItems.length > 1 ? 'flex' : 'none';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lbInner.querySelectorAll('img, .lightbox-caption, .lightbox-iframe-wrap').forEach(el => el.remove());
+}
+
+document.querySelectorAll('.lb-photo-item[data-src]').forEach((item, idx) => {
+    item.addEventListener('click', () => openPhoto(idx));
+});
+lbClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+lbPrev.addEventListener('click', () => { currentIdx = (currentIdx - 1 + photoItems.length) % photoItems.length; openPhoto(currentIdx); });
+lbNext.addEventListener('click', () => { currentIdx = (currentIdx + 1) % photoItems.length; openPhoto(currentIdx); });
+document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft')  { currentIdx = (currentIdx - 1 + photoItems.length) % photoItems.length; openPhoto(currentIdx); }
+    if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % photoItems.length; openPhoto(currentIdx); }
+});
+
+// 영상 라이트박스
+document.querySelectorAll('.lb-video-item[data-video-id]').forEach(item => {
+    item.addEventListener('click', () => {
+        lbInner.querySelectorAll('img, .lightbox-caption, .lightbox-iframe-wrap').forEach(el => el.remove());
+        lbPrev.style.display = lbNext.style.display = 'none';
+        const wrap = document.createElement('div');
+        wrap.className = 'lightbox-iframe-wrap';
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${item.dataset.videoId}?autoplay=1`;
+        iframe.allow = 'autoplay; encrypted-media; fullscreen';
+        wrap.appendChild(iframe);
+        lbInner.appendChild(wrap);
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+});
     </script>
 </body>
 </html>
