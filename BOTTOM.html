@@ -21,16 +21,53 @@
   margin: 0;
   padding: 0;
 }
-    header {
-      padding: 1rem 2rem;
-      background-color: #0f0f0f;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+    header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.8);
+    backdrop-filter:blur(10px);
+
+    z-index:999;
+}
+.header-content{
+    width:100%;
+    padding:0 60px;
+
+    display:flex;
+    align-items:center;
+}
+
+nav{
+    margin-left:auto;
+}
+
+nav ul{
+    display:flex;
+    gap:40px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    letter-spacing:2px;
+    font-family:'Cinzel',serif;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff0000;
+}
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
@@ -38,6 +75,11 @@
       letter-spacing: 3px;
       color: #fff;
     }
+    .logo img{
+    height:40px;
+    width:auto;
+    display:block;
+}
     .logo span {
       color: #ff0000;
     }
@@ -57,10 +99,10 @@
     nav ul li a:hover {
   color: #ff0000 !important;
     } 
-    h1 {
-      text-align: center;
-      margin: 2rem 0 1rem;
-    }
+    h1{
+    text-align:center;
+    margin:120px 0 2rem;
+}
     .showcase-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -124,18 +166,25 @@
 <body>
 
   <header>
-    <div class="logo">BI<span>TE</span></div>
-    <nav>
-      <ul>
-        <li><a href="BEST.html">BEST</a></li>
-<li><a href="OUTER.html">OUTER</a></li>
-<li><a href="TOP.html">TOP</a></li>
-<li><a href="BOTTOM.html">BOTTOM</a></li>
-<li><a href="SHOES.html">SHOES</a></li>
-<li><a href="ACC.html">ACC</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="header-content">
+
+        <div class="logo">
+            <img src="Logo.png" alt="BITE Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="BEST.html">BEST</a></li>
+                <li><a href="OUTER.html">OUTER</a></li>
+                <li><a href="TOP.html">TOP</a></li>
+                <li><a href="BOTTOM.html">BOTTOM</a></li>
+                <li><a href="SHOES.html">SHOES</a></li>
+                <li><a href="ACC.html">ACC</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
 
   <h1>BOTTOM</h1>
 
