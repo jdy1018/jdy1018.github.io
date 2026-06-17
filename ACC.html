@@ -128,19 +128,73 @@ nav a:hover{
     .showcase-item:hover img {
       transform: scale(1.1);
     }
-    .showcase-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 1rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-    }
-    .showcase-item:hover .showcase-overlay {
-      transform: translateY(0);
-    }
+    .showcase-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,minmax(500px,1fr));
+
+    gap:80px;
+
+    width:85%;
+
+    margin:0 auto;
+}
+
+.showcase-item{
+
+    text-decoration:none;
+
+    background:transparent;
+
+    overflow:hidden;
+}
+
+.showcase-item img{
+
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:contain;
+
+    transition:0.4s;
+}
+
+.showcase-item:hover img{
+
+    transform:scale(1.03);
+}
+
+.product-info{
+
+    opacity:0;
+
+    transition:.3s;
+}
+
+.showcase-item:hover .product-info{
+
+    opacity:1;
+}
+
+.product-info h3{
+
+    color:#fff;
+
+    font-size:1.5rem;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:8px;
+}
+
+.product-info p{
+
+    color:#b0b0b0;
+
+    font-size:1rem;
+}
     .showcase-overlay h3 {
       font-size: 1.1rem;
       color: #fff;
@@ -190,42 +244,42 @@ nav a:hover{
   <div class="showcase-grid">
     <a class="showcase-item">
       <img src="ACC PHOTO/BITE Ring.png" alt="BITE Ring">
-      <div class="showcase-overlay">
+      <div class="product-info">
         <h3>BITE Ring</h3>
         <p>$690.91 USD</p>
       </div>
     </a>
     <a class="showcase-item">
       <img src="ACC PHOTO/BITE Belt.png" alt="BITE Belt">
-      <div class="showcase-overlay">
+      <div class="product-info">
         <h3>BITE Belt</h3>
         <p>$1,944.56 USD</p>
       </div>
     </a>
     <a class="showcase-item">
       <img src="ACC PHOTO/BITE Nacklace.png" alt="BITE Nacklace">
-      <div class="showcase-overlay">
+      <div class="product-info">
         <h3>BITE Nacklace</h3>
         <p>$167.70 USD</p>
       </div>
     </a>
     <a class="showcase-item">
       <img src="ACC PHOTO/BITE Sunglass.png" alt="BITE Sunglass">
-      <div class="showcase-overlay">
+      <div class="product-info">
         <h3>BITE Sunglass</h3>
         <p>$357.73 USD</p>
       </div>
     </a>
     <a class="showcase-item">
       <img src="ACC PHOTO/Python-1.png" alt="Python-1">
-      <div class="showcase-overlay">
+      <div class="product-info">
         <h3>Python-1</h3>
         <p>$136.00 USD</p>
       </div>
     </a>
     <a class="showcase-item">
       <img src="ACC PHOTO/Leopard-1.png" alt="Leopard-1">
-      <div class="showcase-overlay">
+      <div class="product-info">
         <h3>Leopard-1</h3>
         <p>$115.00 USD</p>
       </div>
