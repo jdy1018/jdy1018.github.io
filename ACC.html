@@ -96,22 +96,28 @@ nav a:hover{
     text-align:center;
     margin:120px 0 2rem;
 }
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      padding: 0 2rem 2rem;
-    }
-    .showcase-item {
-  position: relative;
-  overflow: hidden;
-  height: 250px;
+    .showcase-grid{
+    display:grid;
 
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
+    grid-template-columns:
+        repeat(auto-fit, minmax(450px,1fr));
 
-  display: block;
+    gap:2rem;
+
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:0 3rem 5rem;
+}
+    .showcase-item{
+    height:600px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:#111;
+
+    transition:.4s;
 }
     .showcase-item img {
       width: 100%;
