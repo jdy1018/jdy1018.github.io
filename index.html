@@ -216,40 +216,167 @@ nav{
             color: var(--accent-color);
         }
         
-        .about-section {
-            padding: 6rem 0;
-            background-color: var(--secondary-color);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-        }
-        .about-image{
-    display:flex;
-    justify-content:center;
+        .about-section{
+
+    background:#050505;
+
+    color:#fff;
+
+    padding:120px 0;
+}
+.about-top{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
     align-items:center;
 
-    background:transparent;
+    min-height:70vh;
+}
+        .about-copy{
+
+    position:relative;
+
+    padding:80px;
 }
 
-.about-image img{
+.about-copy h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:4rem;
+
+    letter-spacing:4px;
+}
+
+.about-copy h2{
+
+    font-family:'Cinzel',serif;
+
+    font-size:2.5rem;
+
+    letter-spacing:5px;
+
+    margin:40px 0;
+}
+
+.about-copy p{
+
+    font-size:1.3rem;
+
+    line-height:1.8;
+
+    color:#aaa;
+}
+.bg-logo{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    font-size:18rem;
+
+    font-family:'Old English Text MT';
+
+    opacity:0.03;
+
+    pointer-events:none;
+}
+        .about-main-image{
+
+    overflow:hidden;
+}
+
+.about-main-image img{
+
     width:100%;
-    max-width:600px;
-    height:auto;
+
+    height:70vh;
+
+    object-fit:cover;
+
+    filter:brightness(.9);
+}
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    2fr 1fr 1fr 1fr;
+
+    gap:1px;
+
+    background:#222;
+
+    margin-top:100px;
+}
+
+.about-grid > div{
+
+    background:#050505;
+}
+.about-grid img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
     display:block;
+
+    transition:.4s;
+}
+
+.about-grid img:hover{
+
+    transform:scale(1.03);
+
+    opacity:.85;
+}
+.about-identity{
+
+    padding:60px;
+}
+
+.about-identity h3{
+
+    font-family:'Cinzel';
+
+    font-size:2rem;
+
+    margin-bottom:40px;
+}
+
+.about-identity ul{
+
+    list-style:none;
+
+    padding:0;
+}
+
+.about-identity li{
+
+    margin-bottom:20px;
+
+    letter-spacing:4px;
+
+    color:#ddd;
+}
+
+.about-identity p{
+
+    margin-top:50px;
+
+    color:#999;
+
+    line-height:2;
 }
         
         .showcase-section {
@@ -602,19 +729,128 @@ textarea{
         </div>
     </section>
 
-    <section id="about" class="about-section">
-        <div class="container about-content">
-            <div class="about-text">
-                <h2>About Us</h2>
-                <p>"BITE's iconic fang logo is rooted in a personal legacy. It was inspired by 'C8 Munda,' a legendary clan name from my father's days in the classic game Lineage. To capture that same raw, unforgettable intensity, we chose 'BITE'—a name that leaves a lasting mark of craftsmanship and power."</p>
-            </div>
-            <div class="about-image">
-    <img src="Logo.png" alt="BITE Logo">
-</div>
-            </div>
-        </div>
-    </section>
+    <section class="about-section">
 
+    <!-- 상단 -->
+    <div class="about-top">
+
+        <div class="about-copy">
+
+            <div class="bg-logo">BITE</div>
+
+            <h1>ABOUT US</h1>
+
+            <div class="line"></div>
+
+            <h2>
+                BARK LESS,<br>
+                BITE MORE.
+            </h2>
+
+            <p>
+                우리는 액세서리를 만드는 브랜드가 아니다.<br>
+                태도를 만드는 브랜드다.
+            </p>
+
+        </div>
+
+        <div class="about-main-image">
+
+            <img src="ACC PHOTO/BITE Ring.png">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 중간 -->
+
+    <div class="about-grid">
+
+        <div class="grid-big">
+            <img src="about-work.jpg">
+        </div>
+
+        <div class="grid-small">
+            <img src="about-necklace.jpg">
+        </div>
+
+        <div class="grid-small">
+            <img src="about-ring.jpg">
+        </div>
+
+        <div class="about-identity">
+
+            <h3>OUR IDENTITY</h3>
+
+            <ul>
+
+                <li>DARKNESS</li>
+
+                <li>INSTINCT</li>
+
+                <li>ATTITUDE</li>
+
+                <li>FREEDOM</li>
+
+            </ul>
+
+            <p>
+
+                어둠 속에서 태어난 본능,
+
+                그 본능을 표현하는 것이
+
+                BITE의 방식이다.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 하단 -->
+
+    <div class="about-values">
+
+        <div>
+
+            <h4>ORIGINAL DESIGN</h4>
+
+            <p>독창적인 디자인</p>
+
+        </div>
+
+        <div>
+
+            <h4>PREMIUM QUALITY</h4>
+
+            <p>최고의 소재와 장인정신</p>
+
+        </div>
+
+        <div>
+
+            <h4>LIMITED PRODUCTION</h4>
+
+            <p>소수를 위한 가치</p>
+
+        </div>
+
+        <div>
+
+            <h4>WEAR YOUR ATTITUDE</h4>
+
+            <p>태도를 완성하는 브랜드</p>
+
+        </div>
+
+    </div>
+
+</section>
     <section id="showcase" class="showcase-section">
         <div class="container">
         <h2 class="section-title">MADE</h2>
